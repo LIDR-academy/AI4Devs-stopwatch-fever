@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronómetro y Temporizador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header común estático -->
+        <header class="header">
+            www.online-stopwatch.com
+        </header>
+
+        <!-- Contenedor del contenido principal -->
+        <main class="main-container">
+            <!-- Contenedores de contenido -->
+            <div class="screen main-screen" id="mainScreen">
+                <div class="options-container">
+                    <div class="option" data-target="stopwatch">
+                        <h2>Stopwatch</h2>
+                        <div class="arrow-up"></div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="option" data-target="countdown">
+                        <h2>Countdown</h2>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen stopwatch-screen" id="stopwatchScreen">
+                <div class="screen-content">
+                    <div class="display">00:00:00.000</div>
+                    <div class="controls">
+                        <button class="btn start-btn">Iniciar</button>
+                        <button class="btn clear-btn">Borrar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen countdown-screen" id="countdownScreen">
+                <div class="screen-content">
+                    <div class="display">00:00:00.000</div>
+                    <div class="numpad">
+                        <div class="numpad-row">
+                            <button class="num-btn">5</button>
+                            <button class="num-btn">6</button>
+                            <button class="num-btn">7</button>
+                            <button class="num-btn">8</button>
+                            <button class="num-btn">9</button>
+                            <button class="set-btn">Set</button>
+                        </div>
+                        <div class="numpad-row">
+                            <button class="num-btn">0</button>
+                            <button class="num-btn">1</button>
+                            <button class="num-btn">2</button>
+                            <button class="num-btn">3</button>
+                            <button class="num-btn">4</button>
+                            <button class="clear-btn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer común estático -->
+        <footer class="footer">
+            <div class="back-btn" style="display: none;">
+                <div class="arrow-left"></div>
+                Back
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
