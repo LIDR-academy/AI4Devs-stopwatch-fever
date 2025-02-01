@@ -1,0 +1,270 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+/* Layout principal */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: #1e3c72;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: monospace;
+    z-index: 10;
+}
+
+/* Footer común */
+.footer {
+    background-color: #1e3c72;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 10;
+}
+
+/* Contenedor principal */
+.main-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+/* Pantallas */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out;
+    visibility: hidden;
+    background-color: #f8f9fa;
+}
+
+/* Contenido de cada pantalla */
+.screen-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Pantalla activa */
+.screen.active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* Pantalla principal siempre visible inicialmente */
+#mainScreen {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* Contenedor de opciones en la pantalla principal */
+.options-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Divisor vertical */
+.divider {
+    width: 2px;
+    background-color: #ddd;
+    height: 400px;
+    margin: 0 4rem;
+}
+
+/* Opciones */
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    cursor: pointer;
+    padding: 1rem;
+    flex: 1;
+}
+
+.option h2 {
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+/* Flechas */
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 160px solid #4CD964;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 160px solid #FF4136;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid #4CD964;
+    margin-right: 0.5rem;
+}
+
+/* Display */
+.display {
+    background: #f0f0f0;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    font-size: 5rem;
+    font-family: monospace;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    width: 90%;
+    text-align: center;
+    border: 2px solid rgba(0,0,0,0.1);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botones */
+.btn, .num-btn, .set-btn, .clear-btn {
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 150px;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.btn:hover, .num-btn:hover, .set-btn:hover, .clear-btn:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn:active, .num-btn:active, .set-btn:active, .clear-btn:active {
+    transform: scale(0.98);
+}
+
+.start-btn {
+    background-color: #4CD964;
+    color: white;
+    margin-right: 1rem;
+}
+
+/* Teclado numérico */
+.numpad {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    width: 90%;
+}
+
+.numpad-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+}
+
+.num-btn {
+    background-color: #4CD964;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    aspect-ratio: 2/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0,0,0,0.1);
+    min-height: 0;
+}
+
+.set-btn {
+    background-color: #4CD964;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.clear-btn {
+    background-color: #E0E0E0;
+    color: #333;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+/* Botón de volver */
+.back-btn {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    height: 100%;
+}
+
+/* Estados de la aplicación */
+.paused .display {
+    color: #FF4136;
+}
+
+.running .display {
+    color: #4CD964;
+}
+
+/* Footer clickeable */
+.footer.clickable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.footer.clickable:hover {
+    background-color: #2a4580;
+}
+
+.footer.clickable:active {
+    background-color: #1a2c5a;
+}
