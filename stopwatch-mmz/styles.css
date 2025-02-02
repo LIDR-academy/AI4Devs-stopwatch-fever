@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Timer Display Styling */
+#stopwatch-display, #countdown-display, #countdown-input-display {
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    background: #e6e9ff;
+    color: black;
+    border: 5px solid #333;
+    display: inline-block;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+button {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    width: 180px;
+    border: 3px solid #333;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    margin: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Start Button */
+#start-stopwatch, #start-countdown {
+    background: linear-gradient(to bottom, #66ff66, #33cc33);
+    color: black;
+}
+
+#start-stopwatch:hover, #start-countdown:hover {
+    background: linear-gradient(to bottom, #57e657, #2db62d);
+}
+
+/* Clear Button */
+#clear-stopwatch, #clear-countdown {
+    background: linear-gradient(to bottom, #ff4444, #cc0000);
+    color: black;
+}
+
+#clear-stopwatch:hover, #clear-countdown:hover {
+    background: linear-gradient(to bottom, #e63b3b, #b30000);
+}
+
+/* Set and Clear Button in Countdown Set Screen */
+#set-countdown {
+    background: linear-gradient(to bottom, #66ccff, #3399ff);
+    color: black;
+}
+
+#set-countdown:hover {
+    background: linear-gradient(to bottom, #57b2e6, #2d88cc);
+}
+
+#clear-input {
+    background: linear-gradient(to bottom, #ffbb33, #ff8800);
+    color: black;
+}
+
+#clear-input:hover {
+    background: linear-gradient(to bottom, #e6a12d, #cc6e00);
+}
+
+/* Numeric Keypad Styling */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 250px;
+}
+
+.keypad button {
+    width: 70px;
+    height: 70px;
+    font-size: 26px;
+    font-weight: bold;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 10px;
+}
+
+.back-button {
+    background: linear-gradient(to bottom, #bbbbbb, #888888);
+    color: black;
+    width: 150px;
+}
+
+.back-button:hover {
+    background: linear-gradient(to bottom, #aaaaaa, #777777);
+}
