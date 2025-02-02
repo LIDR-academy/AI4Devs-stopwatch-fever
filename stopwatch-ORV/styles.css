@@ -1,0 +1,93 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+/* Stopwatch Container */
+.stopwatch-container {
+    text-align: center;
+    background: #1e1e1e;
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #333;
+}
+
+/* Main Time Display */
+#time-display {
+    font-size: 72px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+/* Milliseconds Display */
+#milliseconds {
+    font-size: 24px;
+    font-weight: 500;
+    color: #f1c40f;
+    margin-top: -10px;
+    position: relative;
+    top: -5px;
+}
+
+/* Buttons Container */
+.buttons {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+button {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    min-width: 140px;
+    text-transform: capitalize;
+}
+
+/* Start/Pause Button */
+#start-pause-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+#start-pause-btn:hover {
+    background-color: #219150;
+}
+
+/* Clear Button */
+#clear-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#clear-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Disabled Clear Button */
+#clear-btn:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+}
