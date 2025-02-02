@@ -7,3 +7,15 @@ These are the requirements of the design:
 4. all the html elements should be center aligned, horizontally and vertically
 
 At the end of the task, add the description of the pull request for this change in Markdown format
+
+-------
+
+Update the previous solution to match the designs in the image:
+
+1. Stopwatch:
+   * showing hours, minutes and seconds.
+   * also, the milliseconds using a 3 digits number under the seconds
+2. Buttons:
+   * They should match the designs in the image
+
+The script now should also handle the milliseconds

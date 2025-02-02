@@ -1,42 +1,61 @@
-let startPauseBtn = document.getElementById('start-pause-btn');
-let clearBtn = document.getElementById('clear-btn');
-let timeDisplay = document.getElementById('time-display');
-
-let timer = null;
+let timer;
+let startTime;
 let elapsedTime = 0;
-let isRunning = false;
+let running = false;
 
-startPauseBtn.addEventListener('click', () => {
-    if (isRunning) {
-        // Pause the stopwatch
-        clearInterval(timer);
-        startPauseBtn.textContent = 'Continue';
-    } else {
-        // Start or continue the stopwatch
-        timer = setInterval(() => {
-            elapsedTime += 1000;
-            updateTimeDisplay();
-        }, 1000);
-        startPauseBtn.textContent = 'Pause';
-        clearBtn.disabled = false;
-    }
-    isRunning = !isRunning;
-});
+const hoursDisplay = document.getElementById("hours");
+const minutesDisplay = document.getElementById("minutes");
+const secondsDisplay = document.getElementById("seconds");
+const millisecondsDisplay = document.getElementById("milliseconds");
 
-clearBtn.addEventListener('click', () => {
-    if (!isRunning) {
-        elapsedTime = 0;
-        updateTimeDisplay();
-        clearBtn.disabled = true;
-        startPauseBtn.textContent = 'Start';
-    }
-});
+const startPauseBtn = document.getElementById("start-pause-btn");
+const clearBtn = document.getElementById("clear-btn");
 
-function updateTimeDisplay() {
-    let hours = Math.floor(elapsedTime / 3600000);
-    let minutes = Math.floor((elapsedTime % 3600000) / 60000);
-    let seconds = Math.floor((elapsedTime % 60000) / 1000);
+function updateTime() {
+    const now = Date.now();
+    elapsedTime = now - startTime;
 
-    timeDisplay.textContent =
-        `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    let totalMilliseconds = elapsedTime % 1000;
+    let totalSeconds = Math.floor(elapsedTime / 1000);
+    let totalMinutes = Math.floor(totalSeconds / 60);
+    let totalHours = Math.floor(totalMinutes / 60);
+
+    let seconds = totalSeconds % 60;
+    let minutes = totalMinutes % 60;
+    let hours = totalHours;
+
+    hoursDisplay.textContent = String(hours).padStart(2, "0");
+    minutesDisplay.textContent = String(minutes).padStart(2, "0");
+    secondsDisplay.textContent = String(seconds).padStart(2, "0");
+    millisecondsDisplay.textContent = String(totalMilliseconds).padStart(3, "0");
 }
+
+function startPauseStopwatch() {
+    if (running) {
+        clearInterval(timer);
+        startPauseBtn.textContent = "Continue";
+    } else {
+        startTime = Date.now() - elapsedTime;
+        timer = setInterval(updateTime, 10);
+        startPauseBtn.textContent = "Pause";
+    }
+    running = !running;
+    clearBtn.disabled = false;
+}
+
+function clearStopwatch() {
+    clearInterval(timer);
+    elapsedTime = 0;
+    running = false;
+
+    hoursDisplay.textContent = "00";
+    minutesDisplay.textContent = "00";
+    secondsDisplay.textContent = "00";
+    millisecondsDisplay.textContent = "000";
+
+    startPauseBtn.textContent = "Start";
+    clearBtn.disabled = true;
+}
+
+startPauseBtn.addEventListener("click", startPauseStopwatch);
+clearBtn.addEventListener("click", clearStopwatch);

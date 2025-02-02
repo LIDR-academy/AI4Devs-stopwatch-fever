@@ -8,9 +8,14 @@
 </head>
 <body>
     <div class="stopwatch-container">
-        <div id="time-display">00:00:00</div>
-        <button id="start-pause-btn">Start</button>
-        <button id="clear-btn" disabled>Clear</button>
+        <div id="time-display">
+            <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <div id="milliseconds">000</div>
+        <div class="buttons">
+            <button id="start-pause-btn">Start</button>
+            <button id="clear-btn" disabled>Clear</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
