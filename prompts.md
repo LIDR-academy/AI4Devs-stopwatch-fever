@@ -19,3 +19,7 @@ Update the previous solution to match the designs in the image:
    * They should match the designs in the image
 
 The script now should also handle the milliseconds
+
+-------
+
+The styling does not match the given image. Modify the css to match it exactly. 
