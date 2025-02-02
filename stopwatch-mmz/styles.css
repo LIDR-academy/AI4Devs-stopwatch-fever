@@ -1,0 +1,118 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* General Button Styling */
+button {
+    font-size: 18px;
+    margin: 5px;
+    padding: 10px;
+    width: 120px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Default Blue Buttons */
+button:not(#set-countdown, #clear-countdown, #clear-input) {
+    background: #007bff;
+    color: white;
+}
+
+button:not(#set-countdown, #clear-countdown, #clear-input):hover {
+    background: #0056b3;
+}
+
+/* Timer Display Styles */
+#stopwatch-display, #countdown-display {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+/* Hide Elements */
+.hidden {
+    display: none;
+}
+
+/* Numeric Keypad Styling */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 200px;
+}
+
+.keypad button {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+}
+
+/* Countdown Timer Controls */
+#countdown-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+#countdown-controls button {
+    width: 140px;
+    padding: 12px;
+    font-size: 18px;
+}
+
+/* Set and Clear Button Styling in Countdown Set Screen */
+#set-countdown {
+    background: #28a745; /* Green */
+    color: white;
+}
+
+#set-countdown:hover {
+    background: #218838;
+}
+
+#clear-input {
+    background: #ffc107; /* Yellow for Clear in Set Screen */
+    color: black;
+}
+
+#clear-input:hover {
+    background: #e0a800;
+}
+
+/* Clear Button Styling in Countdown Timer Screen */
+#clear-countdown {
+    background: #dc3545; /* Red */
+    color: white;
+}
+
+#clear-countdown:hover {
+    background: #c82333;
+}
