@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.timer-display {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#timer {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.milliseconds {
+    font-size: 24px;
+    color: #666;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.start-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.clear-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.mode-selection {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mode-btn, .start-btn, .clear-btn, .back-btn, .set-btn, .clear-num-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.mode-btn {
+    width: 220px; /* Increased width to accommodate emoji */
+}
+
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #607D8B;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.numpad {
+    margin: 20px 0;
+}
+
+.numpad-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.num-btn, .set-btn, .clear-num-btn {
+    padding: 15px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.set-btn {
+    background-color: #2196F3;
+}
+
+.clear-num-btn {
+    background-color: #f44336;
+}
