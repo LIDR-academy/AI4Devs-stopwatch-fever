@@ -9,6 +9,7 @@ These are the requirements of the design:
 At the end of the task, add the description of the pull request for this change in Markdown format
 
 -------
+# 2nd prompt to add the milliseconds
 
 Update the previous solution to match the designs in the image:
 
@@ -21,10 +22,12 @@ Update the previous solution to match the designs in the image:
 The script now should also handle the milliseconds
 
 -------
+# Optional prompt to match the styling: Fail
 
 The styling does not match the given image. Modify the css to match it exactly. 
 
 -------
+# Optional prompt to match the styling: Closer
 
 The styles do not match the image in background, border, font-size, milliseconds alignment, uppercase and lowercase texts, color of the buttons.
 Please analyze the image and make it pixel perfect
