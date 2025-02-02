@@ -23,3 +23,9 @@ The script now should also handle the milliseconds
 -------
 
 The styling does not match the given image. Modify the css to match it exactly. 
+
+-------
+
+The styles do not match the image in background, border, font-size, milliseconds alignment, uppercase and lowercase texts, color of the buttons.
+Please analyze the image and make it pixel perfect
+
