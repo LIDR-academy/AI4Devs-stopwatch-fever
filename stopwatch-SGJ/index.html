@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cronómetro Digital</title>
+    <style>
+      .app {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      .screen {
+        display: none;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .screen--active {
+        display: flex;
+      }
+
+      .button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        margin: 8px;
+      }
+
+      .button:hover {
+        opacity: 0.9;
+      }
+
+      .button--primary {
+        background: #2196f3;
+        color: white;
+      }
+
+      .button--secondary {
+        background: #4caf50;
+        color: white;
+      }
+
+      .button--danger {
+        background: #f44336;
+        color: white;
+      }
+
+      .display {
+        font-size: 64px;
+        font-family: monospace;
+        background: white;
+        padding: 20px 40px;
+        border-radius: 10px;
+        margin: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .keypad {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 20px;
+      }
+
+      .keypad__button {
+        padding: 20px;
+        font-size: 24px;
+        border: none;
+        border-radius: 5px;
+        background: #e0e0e0;
+        cursor: pointer;
+      }
+
+      .nav-button {
+        position: absolute;
+        top: 20px;
+        padding: 8px 16px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .nav-button--back {
+        left: 20px;
+      }
+
+      .nav-button--fullscreen {
+        right: 20px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body class="app">
+    <!-- Pantalla Principal -->
+    <div id="mainScreen" class="screen screen--active">
+      <button
+        class="button button--primary nav-button nav-button--fullscreen"
+        onclick="toggleFullscreen()"
+      >
+        🚀 Fullscreen
+      </button>
+
+      <button class="button button--primary" onclick="showScreen('stopwatch')">
+        Cronómetro
+      </button>
+
+      <button
+        class="button button--secondary"
+        onclick="showScreen('countdown')"
+      >
+        Contador
+      </button>
+    </div>
+
+    <!-- Cronómetro -->
+    <div id="stopwatchScreen" class="screen">
+      <button class="nav-button nav-button--back" onclick="showScreen('main')">
+        ←
+      </button>
+      <div class="display" id="stopwatchDisplay">00:00:00:000</div>
+
+      <div>
+        <button
+          class="button button--primary"
+          id="stopwatchStart"
+          onclick="toggleStopwatch()"
+        >
+          Iniciar
+        </button>
+        <button class="button button--danger" onclick="resetStopwatch()">
+          Reiniciar
+        </button>
+      </div>
+    </div>
+
+    <!-- Contador Regresivo -->
+    <div id="countdownScreen" class="screen">
+      <button class="nav-button nav-button--back" onclick="showScreen('main')">
+        ←
+      </button>
+      <div class="display" id="countdownInputDisplay">00:00:00</div>
+      <div class="display" id="countdownDisplay" style="display: none"></div>
+
+      <div class="keypad">
+        <button class="keypad__button" onclick="addDigit(7)">7</button>
+        <button class="keypad__button" onclick="addDigit(8)">8</button>
+        <button class="keypad__button" onclick="addDigit(9)">9</button>
+        <button class="keypad__button" onclick="addDigit(4)">4</button>
+        <button class="keypad__button" onclick="addDigit(5)">5</button>
+        <button class="keypad__button" onclick="addDigit(6)">6</button>
+        <button class="keypad__button" onclick="addDigit(1)">1</button>
+        <button class="keypad__button" onclick="addDigit(2)">2</button>
+        <button class="keypad__button" onclick="addDigit(3)">3</button>
+        <button class="keypad__button" onclick="addDigit(0)">0</button>
+      </div>
+
+      <div>
+        <button
+          class="button button--primary"
+          id="setButton"
+          onclick="setCountdown()"
+        >
+          Establecer
+        </button>
+        <button class="button button--danger" onclick="resetCountdown()">
+          Limpiar
+        </button>
+        <button
+          class="button button--secondary"
+          id="startCountdown"
+          onclick="startCountdown()"
+          style="display: none"
+        >
+          Iniciar
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
