@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 500px;
     margin: 50px auto;
     padding: 20px;
     background: white;
@@ -16,45 +16,55 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-/* General Button Styling */
-button {
-    font-size: 18px;
-    margin: 5px;
-    padding: 10px;
-    width: 120px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-/* Default Blue Buttons */
-button:not(#set-countdown, #clear-countdown, #clear-input) {
-    background: #007bff;
-    color: white;
-}
-
-button:not(#set-countdown, #clear-countdown, #clear-input):hover {
-    background: #0056b3;
-}
-
-/* Timer Display Styles */
+/* Timer Display Styling */
 #stopwatch-display, #countdown-display {
-    font-size: 2em;
-    margin: 20px 0;
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    background: #e6e9ff; /* Light blue background */
+    color: black;
+    border: 5px solid #333;
+    display: inline-block;
+    min-width: 300px;
 }
 
-/* Hide Elements */
-.hidden {
-    display: none;
+/* Button Styling */
+button {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    width: 180px;
+    border: 3px solid #333;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+/* Start Button */
+#start-stopwatch, #start-countdown {
+    background: linear-gradient(to bottom, #66ff66, #33cc33);
+    color: black;
+}
+
+#start-stopwatch:hover, #start-countdown:hover {
+    background: linear-gradient(to bottom, #57e657, #2db62d);
+}
+
+/* Clear Button */
+#clear-stopwatch, #clear-countdown {
+    background: linear-gradient(to bottom, #ff4444, #cc0000);
+    color: black;
+}
+
+#clear-stopwatch:hover, #clear-countdown:hover {
+    background: linear-gradient(to bottom, #e63b3b, #b30000);
+}
+
+/* Button Press Effect */
+button:active {
+    transform: scale(0.95);
 }
 
 /* Numeric Keypad Styling */
@@ -64,55 +74,34 @@ button:not(#set-countdown, #clear-countdown, #clear-input):hover {
     gap: 10px;
     justify-content: center;
     margin: 20px auto;
-    max-width: 200px;
+    max-width: 250px;
 }
 
 .keypad button {
-    width: 60px;
-    height: 60px;
-    font-size: 22px;
+    width: 70px;
+    height: 70px;
+    font-size: 26px;
+    font-weight: bold;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 10px;
 }
 
-/* Countdown Timer Controls */
-#countdown-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-#countdown-controls button {
-    width: 140px;
-    padding: 12px;
-    font-size: 18px;
-}
-
-/* Set and Clear Button Styling in Countdown Set Screen */
+/* Set and Clear Button in Countdown Set Screen */
 #set-countdown {
-    background: #28a745; /* Green */
-    color: white;
+    background: linear-gradient(to bottom, #66ccff, #3399ff);
+    color: black;
 }
 
 #set-countdown:hover {
-    background: #218838;
+    background: linear-gradient(to bottom, #57b2e6, #2d88cc);
 }
 
 #clear-input {
-    background: #ffc107; /* Yellow for Clear in Set Screen */
+    background: linear-gradient(to bottom, #ffbb33, #ff8800);
     color: black;
 }
 
 #clear-input:hover {
-    background: #e0a800;
-}
-
-/* Clear Button Styling in Countdown Timer Screen */
-#clear-countdown {
-    background: #dc3545; /* Red */
-    color: white;
-}
-
-#clear-countdown:hover {
-    background: #c82333;
+    background: linear-gradient(to bottom, #e6a12d, #cc6e00);
 }
