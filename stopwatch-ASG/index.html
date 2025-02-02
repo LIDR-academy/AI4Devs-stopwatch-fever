@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stopwatch & Countdown</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Inline CSS (no external CSS files) -->
+  <style>
+    /* Global style */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .screen {
+      display: none;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+    }
+    .active {
+      display: block;
+    }
+    /* Buttons */
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .back-button {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+    .back-button span {
+      margin-left: 5px;
+    }
+    /* Display areas */
+    .display {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+    }
+    /* Digit buttons for the countdown */
+    .digit-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .digit-buttons button {
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Screen -->
+  <div id="mainScreen" class="screen active">
+    <div class="button-container">
+      <button id="toStopwatch">Stopwatch</button>
+      <button id="toCountdown">Countdown</button>
+    </div>
+  </div>
+
+  <!-- Stopwatch Screen -->
+  <div id="stopwatchScreen" class="screen">
+    <button id="backFromStopwatch" class="back-button">&larr;<span>Back</span></button>
+    <!-- Display shows HH:MM:SS.mmm -->
+    <div id="stopwatchDisplay" class="display">00:00:00.000</div>
+    <div class="button-container">
+      <button id="startPauseBtn">Start</button>
+      <button id="clearBtn">Clear</button>
+    </div>
+  </div>
+
+  <!-- Countdown Screen -->
+  <div id="countdownScreen" class="screen">
+    <button id="backFromCountdown" class="back-button">&larr;<span>Back</span></button>
+    <!-- Display shows HH:MM:SS (entered as up to 6 digits) -->
+    <div id="countdownDisplay" class="display">00:00:00</div>
+    <div class="button-container">
+      <button id="setBtn">Set</button>
+      <button id="clearCountdownBtn">Clear</button>
+    </div>
+    <div class="digit-buttons">
+      <!-- Ten buttons with digits 0 to 9 -->
+      <button class="digit">0</button>
+      <button class="digit">1</button>
+      <button class="digit">2</button>
+      <button class="digit">3</button>
+      <button class="digit">4</button>
+      <button class="digit">5</button>
+      <button class="digit">6</button>
+      <button class="digit">7</button>
+      <button class="digit">8</button>
+      <button class="digit">9</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
