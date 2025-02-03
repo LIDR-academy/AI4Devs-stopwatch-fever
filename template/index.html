@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timer and Countdown</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer and Countdown</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Timer and Countdown</h1>
+<div class="container">
+    <h1>Timer and Countdown</h1>
+
+    <!-- Menú inicial -->
+    <div class="menu">
+        <button id="show-stopwatch">Stopwatch</button>
+        <button id="show-countdown">Countdown</button>
+    </div>
+
+    <!-- Cronómetro -->
+    <div id="stopwatch-section" class="hidden">
+        <h2>Stopwatch</h2>
+        <div id="stopwatch-display">00:00:00</div>
+        <div class="controls">
+            <button id="start-stopwatch">Start</button>
+            <button id="pause-stopwatch">Pause</button>
+            <button id="reset-stopwatch">Reset</button>
+        </div>
+    </div>
+
+    <!-- Cuenta Atrás -->
+    <div id="countdown-section" class="hidden">
+        <h2>Countdown</h2>
+        <input type="number" id="countdown-input" placeholder="Enter time in seconds" min="1">
+        <div id="countdown-display">00:00:00</div>
+        <div class="controls">
+            <button id="start-countdown">Start</button>
+            <button id="reset-countdown">Reset</button>
+        </div>
+    </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
