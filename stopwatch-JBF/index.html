@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Stopwatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Online Stopwatch</h1>
+        <div class="mode-switch">
+            <button id="stopwatchMode">Stopwatch Mode</button>
+            <button id="countdownMode">Countdown Mode</button>
+        </div>
+
+        <div id="stopwatch" class="mode">
+            <div class="display" id="stopwatchDisplay">00:00:00</div>
+            <button id="startStopwatch">Start</button>
+            <button id="clearStopwatch">Clear</button>
+        </div>
+
+        <div id="countdown" class="mode hidden">
+            <div class="display" id="countdownDisplay">00:00:00</div>
+            <div class="num-pad">
+                <button class="num" data-num="1">1</button>
+                <button class="num" data-num="2">2</button>
+                <button class="num" data-num="3">3</button>
+                <button class="num" data-num="4">4</button>
+                <button class="num" data-num="5">5</button>
+                <button class="num" data-num="6">6</button>
+                <button class="num" data-num="7">7</button>
+                <button class="num" data-num="8">8</button>
+                <button class="num" data-num="9">9</button>
+                <button class="num" data-num="0">0</button>
+            </div>
+            <button id="setCountdown">Set</button>
+            <button id="clearCountdown">Clear</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
