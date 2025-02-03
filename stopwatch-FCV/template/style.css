@@ -1,0 +1,119 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #F2FBF3; /* Light Green */
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mode Selection (Stopwatch vs Countdown) */
+.mode-selection {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #E6E9FD; /* Light Blue */
+    border-radius: 5px;
+}
+
+.mode-selection button {
+    width: 45%;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#stopwatch-mode {
+    background-color: #73F74B; /* Bright Green */
+    color: black;
+    border: 2px solid black;
+}
+
+#countdown-mode {
+    background-color: #EA3323; /* Bright Red */
+    color: black;
+    border: 2px solid black;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Timer Display */
+.timer-mode {
+    display: none;
+    padding: 20px;
+}
+
+.timer-display {
+    font-size: 48px;
+    font-weight: bold;
+    background-color: #E6E9FD; /* Light Blue */
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    min-width: 250px;
+    border: 3px solid black;
+}
+
+/* Stopwatch Controls */
+.controls {
+    margin-top: 15px;
+}
+
+.controls button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+/* Start and Reset Buttons */
+#startStopwatch, #startCountdown {
+    background-color: #73F74B; /* Bright Green */
+}
+
+#resetStopwatch, #resetCountdown {
+    background-color: #EA3323; /* Bright Red */
+}
+
+/* Countdown Input Buttons */
+.countdown-input {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin: 15px 0;
+}
+
+.num-btn {
+    font-size: 24px;
+    padding: 10px;
+    background-color: #73F74B; /* Bright Green */
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+#clearCountdown {
+    background-color: #303030; /* Dark Gray */
+    color: white;
+}
+
+#setCountdown {
+    background-color: #73F74B; /* Bright Green */
+    color: black;
+}

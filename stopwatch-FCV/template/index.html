@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch & Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stopwatch & Countdown Timer</h1>
+        <div class="mode-selection">
+            <button id="stopwatch-mode">Stopwatch</button>
+            <button id="countdown-mode">Countdown</button>
+        </div>
+
+        <!-- Stopwatch UI -->
+        <div id="stopwatch" class="timer-mode">
+            <h2>Stopwatch</h2>
+            <div class="timer-display">00:00:00.000</div>
+            <div class="controls">
+                <button id="startStopwatch">Start</button>
+                <button id="resetStopwatch">Reset</button>
+                <button id="backStopwatch">Back</button>
+            </div>
+        </div>
+
+        <!-- Countdown UI -->
+        <div id="countdown" class="timer-mode">
+            <h2>Countdown Timer</h2>
+            <div class="timer-display">00:00:00.000</div>
+            <div class="countdown-input">
+                <button class="num-btn" data-time="1">1</button>
+                <button class="num-btn" data-time="2">2</button>
+                <button class="num-btn" data-time="3">3</button>
+                <button class="num-btn" data-time="4">4</button>
+                <button class="num-btn" data-time="5">5</button>
+                <button class="num-btn" data-time="6">6</button>
+                <button class="num-btn" data-time="7">7</button>
+                <button class="num-btn" data-time="8">8</button>
+                <button class="num-btn" data-time="9">9</button>
+                <button class="num-btn" data-time="0">0</button>
+            </div>
+            <div class="controls">
+                <button id="startCountdown">Start</button>
+                <button id="resetCountdown">Reset</button>
+                <button id="backCountdown">Back</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
