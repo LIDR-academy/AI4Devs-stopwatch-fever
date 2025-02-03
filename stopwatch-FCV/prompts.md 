@@ -1,0 +1,84 @@
+#prompt 1
+
+---
+
+# Front-End Web Developer Task: Stopwatch and Countdown Timer Web Application
+
+You are an expert front-end web developer with extensive experience in HTML, CSS, and JavaScript.
+Your task is to create a fully functional and visually appealing **stopwatch** and **countdown timer web application**, mirroring the design and functionality of the online website [online-stopwatch.com](https://www.online-stopwatch.com/).
+
+### **Requirements:**
+
+1. **Functionality:**
+    * **Stopwatch:**
+        - Accurately measure and display elapsed time, including **milliseconds**.
+        - The "Start/Pause" button should freeze/resume the timer from where it left off.
+        - "Reset" should clear the timer back to `0`.
+    * **Countdown:**
+        - Count down from the user-specified time in **seconds** to zero. The display should update in real-time showing, including **milliseconds** .
+        - Upon reaching zero, the timer should stop automatically.
+    * **Dual Mode Functionality:**
+        - The application MUST include two distinct modes: a **stopwatch (counting up)** and a **countdown timer (counting down)**.
+        - Switching between these modes should be intuitive
+        - Only one mode should be active at a time, and the application should **reset the current timer's values** when switching between modes.
+2. **User Interface (UI) Elements:**
+    * **Mode Switching:** Separate buttons to switch between Stopwatch and Countdown Timer modes.
+    * **Stopwatch Controls:** A button for "Start/Pause" and "Reset" buttons for the stopwatch mode. An additional "back" button to navigate back to the main screen.
+    * **Countdown Controls:** Ten buttons, one per number for the user to enter the countdown duration in seconds. A "Start Countdown/pause" to resume/initiate the countdown and a reset button. An additional "back" button to navigate back to the main screen.
+
+3. **Visual Design (CSS):**
+    - The overall look and feel of the application MUST match the provided https://www.online-stopwatch.com/.
+    - **switching between modes** must match the design of the following image: https://github.com/felixcarpena/AI4Devs-stopwatch-fever/blob/main/stopwatch-FCV/example-screenshots/switch.png
+    - **Countdown** must match the design of the following image: https://github.com/felixcarpena/AI4Devs-stopwatch-fever/blob/main/stopwatch-FCV/example-screenshots/countdown.png
+    - **Stopwatch** must match the design of the following image: https://github.com/felixcarpena/AI4Devs-stopwatch-fever/blob/main/stopwatch-FCV/example-screenshots/stopwatch.png
+    - Extract colors and styles from the uploaded images to match the design as closely as possible.
+    - The application should be **responsive** and **mobile-friendly**.
+
+4. **Validation**:
+    - **Stopwatch:**
+        - Ensure that when the user starts the stopwatch, the **time is initialized correctly at `00:00:00.000`**.
+        - Ensure that **time is displayed correctly**.
+        - **Pause functionality:** Ensure that the timer **stops immediately** when the "Pause/Resume" button is clicked and **resumes from where it was paused** when the button is clicked again.
+        - **Reset functionality:** Ensure that the "Reset" button **resets the timer back to `00:00:00.000`** when clicked.
+
+    - **Countdown:**
+        - Ensure the the user can click on each number button to set the countdown time.
+        - **Countdown Behavior:** Ensure that the countdown **updates the display in real-time** as the countdown progresses.
+        - **Alert on Completion:** When the countdown reaches `0`, ensure that it **automatically stops** and optionally **plays a sound alert**.
+        - **Pause functionality:** Ensure that the timer **stops immediately** when the "Pause/Resume" button is clicked and **resumes from where it was paused** when the button is clicked again.
+        - **Reset functionality:** Ensure that the "Reset" button **resets the timer back to the user-defined countdown time** when clicked.
+
+    - **Mode Switching:**
+        - When switching between modules, ensure all values are **reset to their initial state**.
+
+5. **Code Quality:**
+    - Write **clean**, **well-commented**, and **efficient code**.
+    - Use **meaningful variable names** and follow best practices for HTML, CSS, and JavaScript.
+    - Code should follow **best practices** and be **organized** in a structured manner.
+
+---
+
+### **Important Considerations:**
+
+- 1. **No External Libraries:**
+    - The application should be built using **vanilla JavaScript**, HTML, and CSS, without relying on any external libraries or frameworks.
+- 2. **File Structure:**
+    - The project MUST consist of three files: `index.html` for the HTML structure, `script.js` for the JavaScript logic, and `style.css` for the CSS styles.
+
+---
+
+#prompt 2
+
+Please, follow the prompt as provided and ensure that you are providing styles based on the images provided.
+
+---
+
+#prompt 3
+
+Much better but when switching between modes bot appear at the same time which is not correct
+
+---
+
+#prompt 4
+
+stopwatch and style  is fully functional, keep them as they are but countdown number buttons doesn't work
