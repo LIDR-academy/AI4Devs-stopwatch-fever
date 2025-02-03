@@ -50,4 +50,16 @@ As a QA engineer with WCAG expertise:
 As a QA engineer, there is a problem in the javascript and the background colors.
 Please fix it
 
+# Prompt 8
 
+As a frontend experienced developer:
+- Modify the index and initial javascript to add an initial screen with two buttons: stopwatch and countdown
+- The countdown screen will have an interface with buttons to specify the initial time
+- There will be a button to start counting down. When clicking, it must change to Pause and pause the countdown. When clicking pause, it must change to Resume. When clicking resume it must continue counting down
+- There will be a clear button that clicking on it will reset the countdown
+- Follow the same design principles as before
+
+# Prompt 9
+
+As a QA engineer experienced with WCAG:
+- Improve the countdown button colors to be more visible

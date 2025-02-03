@@ -102,3 +102,36 @@ button:hover {
         max-width: 100%;
     }
 }
+
+.hidden { display: none; }
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+button {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+#back-to-menu, #back-to-menu-2, #stopwatch-btn, #countdown-btn, .resume { background: #00509E; }
+.pause { background: #B45309; }
+#clear, #clearCountdown { background: #8B0000; }
+.timer { font-size: 2rem; padding: 20px; background: #E0E7FF; color: black; }
+.input-group input { width: 60px; padding: 5px; font-size: 1.2rem; }
+
+/* Countdown Buttons */
+#startPauseCountdown { background: #00509E; } /* Dark Blue */
+#startPauseCountdown.resume { background: #004AAD; } /* Deep Blue */
+#startPauseCountdown.pause { background: #D97706; } /* Dark Amber */
+#clearCountdown { background: #B91C1C; } /* Deep Red */
+
+/* Stopwatch Buttons */
+#startPause.resume { background: #004AAD; } /* Deep Blue */
+#startPause.pause { background: #D97706; } /* Dark Amber */
+#clear { background: #B91C1C; } /* Deep Red */
