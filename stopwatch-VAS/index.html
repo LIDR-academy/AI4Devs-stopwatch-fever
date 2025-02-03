@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch & Countdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="initial-screen" class="container">
+        <h1>Choose Mode</h1>
+        <button id="stopwatch-btn">Stopwatch</button>
+        <button id="countdown-btn">Countdown</button>
+    </div>
+
+    <!-- Stopwatch Screen -->
+    <div id="stopwatch-screen" class="container hidden">
+        <div id="timer" class="timer">00:00:00.000</div>
+        <div class="buttons">
+            <button id="startPause">Start</button>
+            <button id="clear">Clear</button>
+        </div>
+        <button id="back-to-menu">Back</button>
+    </div>
+
+    <!-- Countdown Screen -->
+    <div id="countdown-screen" class="container hidden">
+        <div class="input-group">
+            <input type="number" id="hours" min="0" placeholder="HH">
+            <input type="number" id="minutes" min="0" max="59" placeholder="MM">
+            <input type="number" id="seconds" min="0" max="59" placeholder="SS">
+        </div>
+        <div id="countdown-timer" class="timer">00:00:00</div>
+        <div class="buttons">
+            <button id="startPauseCountdown">Start</button>
+            <button id="clearCountdown">Clear</button>
+        </div>
+        <button id="back-to-menu-2">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
