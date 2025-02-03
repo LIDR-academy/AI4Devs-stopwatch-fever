@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #F0F4F8; /* Soft gray-blue for readability */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+}
+
+/* Stopwatch display */
+.timer {
+    font-size: 6vw;
+    font-weight: bold;
+    background: #E0E7FF; /* Deeper blue for contrast */
+    padding: 2vw;
+    border-radius: 10px;
+    border: 4px solid #333;
+    text-align: center;
+    color: #000; /* Black text for maximum readability */
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vw;
+}
+
+button {
+    font-size: 3vw;
+    padding: 2vw;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 1;
+    margin: 0 1vw;
+    max-width: 45%;
+    color: white;
+}
+
+/* Start Button */
+#startPause {
+    background: #00509E; /* Dark blue */
+}
+
+/* Pause Button */
+.pause {
+    background: #B45309; /* Darker Orange for WCAG 7.1:1 */
+}
+
+/* Resume Button */
+.resume {
+    background: #00509E; /* Dark Blue */
+}
+
+/* Clear Button */
+#clear {
+    background: #8B0000; /* Dark Red for contrast */
+}
+
+/* Button hover effect */
+button:hover {
+    opacity: 0.85;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+    .timer {
+        font-size: 8vw;
+        padding: 3vw;
+    }
+
+    button {
+        font-size: 4vw;
+        padding: 3vw;
+    }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+    .timer {
+        font-size: 10vw;
+        padding: 4vw;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 3vw;
+    }
+
+    button {
+        font-size: 6vw;
+        padding: 4vw;
+        max-width: 100%;
+    }
+}
