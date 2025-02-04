@@ -115,62 +115,66 @@ footer {
     margin-top: 50px;
 }
 
-.keypad {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+.display {
+    font-size: 50px;
+    font-weight: bold;
+    background-color: #d8e6ff;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid black;
 }
 
-.keypad button {
+.milliseconds {
     font-size: 20px;
-    padding: 15px;
+    vertical-align: top;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 20px;
     margin: 5px;
-    background-color: green;
-    color: white;
     border: none;
     cursor: pointer;
 }
 
 .set {
     background-color: green;
+    color: white;
 }
 
 .clear {
     background-color: gray;
+    color: white;
 }
 
-.start, .pause {
+.start {
     background-color: green;
     color: white;
-    font-size: 20px;
-    padding: 15px 30px;
-    margin: 10px;
+}
+
+.pause {
+    background-color: green;
+    color: white;
 }
 
 .hidden {
     display: none;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: navy;
-    padding: 10px 0;
-}
-
-.back {
+.alarm {
+    background-color: red !important;
     color: white;
-    background-color: navy;
-    font-size: 18px;
-}
-
-.blinking {
     animation: blink 0.5s infinite alternate;
 }
 
 @keyframes blink {
     from { background-color: red; }
-    to { background-color: rgba(255, 0, 0, 0.6); }
+    to { background-color: darkred; }
 }

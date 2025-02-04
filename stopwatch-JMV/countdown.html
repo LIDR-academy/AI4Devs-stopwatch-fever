@@ -12,8 +12,8 @@
         <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
         <span class="milliseconds">000</span>
     </div>
-    <div id="input-section" class="input-section">
-        <div class="keypad">
+    <div id="input-buttons">
+        <div class="row">
             <button onclick="addDigit(5)">5</button>
             <button onclick="addDigit(6)">6</button>
             <button onclick="addDigit(7)">7</button>
@@ -21,7 +21,7 @@
             <button onclick="addDigit(9)">9</button>
             <button class="set" onclick="setCountdown()">Set</button>
         </div>
-        <div class="keypad">
+        <div class="row">
             <button onclick="addDigit(0)">0</button>
             <button onclick="addDigit(1)">1</button>
             <button onclick="addDigit(2)">2</button>
@@ -30,15 +30,14 @@
             <button class="clear" onclick="clearCountdown()">Clear</button>
         </div>
     </div>
-    <div id="countdown-controls" class="hidden">
+    <div id="start-clear-buttons" class="hidden">
         <button id="startPauseBtn" class="start" onclick="toggleCountdown()">Start</button>
-        <button class="clear" onclick="clearCountdown()">Clear</button>
+        <button class="clear" onclick="resetCountdown()">Clear</button>
     </div>
 </div>
 <footer>
     <button class="back" onclick="location.href='index.html'">← Back</button>
 </footer>
-<audio id="alarm-sound" src="alarm.mp3"></audio>
 <script src="countdown.js"></script>
 </body>
 </html>

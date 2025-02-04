@@ -62,3 +62,15 @@ Siguiendo con los archivos que ha me has generado necesito añadir la pantalla d
 - El diseño debe ser como la imagen adjuntada
 - El código tiene que estar dividido en diferentes funciones y seguir buenas prácticas
 ```
+
+# Correciones
+
+```
+Correcciones para cuenta atrás:
+- Cuando se añade un número definido por el usuario tiene que cumplir esto:
+1. Estando el contador a 00:00:00 si el usuario selecciona 5 pasa al siguiente estado:
+2. 00:00:05 si el usuario vuelve a seleccionar 5 pasa al siguiente estado:
+3. 00:00:55 si el usuario selecciona ahora 3 pasa al siguiente estado:
+4. 00:05:53
+```
+

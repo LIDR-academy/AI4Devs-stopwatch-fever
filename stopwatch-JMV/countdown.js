@@ -1,20 +1,35 @@
-let countdownTime = 0;
 let countdownTimer;
 let isCountingDown = false;
+let initialTime = 0;
+let remainingTime = 0;
+let inputArray = [0, 0, 0, 0, 0, 0]; // hh:mm:ss
 
 function addDigit(digit) {
-    let totalSeconds = Math.floor(countdownTime / 1000);
-    let newTime = (totalSeconds * 10) + digit;
-
-    if (newTime > 359999) return; // Límite: 99:59:59
-
-    countdownTime = newTime * 1000;
+    // Desplazar valores a la izquierda y agregar el nuevo a la derecha
+    inputArray.shift();
+    inputArray.push(digit);
     updateDisplay();
 }
 
+function updateDisplay() {
+    document.getElementById("hours").textContent = `${inputArray[0]}${inputArray[1]}`;
+    document.getElementById("minutes").textContent = `${inputArray[2]}${inputArray[3]}`;
+    document.getElementById("seconds").textContent = `${inputArray[4]}${inputArray[5]}`;
+}
+
 function setCountdown() {
-    document.getElementById("input-section").classList.add("hidden");
-    document.getElementById("countdown-controls").classList.remove("hidden");
+    initialTime =
+        parseInt(inputArray[0]) * 3600000 +
+        parseInt(inputArray[1]) * 360000 +
+        parseInt(inputArray[2]) * 60000 +
+        parseInt(inputArray[3]) * 10000 +
+        parseInt(inputArray[4]) * 1000 +
+        parseInt(inputArray[5]) * 100;
+
+    remainingTime = initialTime;
+
+    document.getElementById("input-buttons").classList.add("hidden");
+    document.getElementById("start-clear-buttons").classList.remove("hidden");
 }
 
 function toggleCountdown() {
@@ -25,46 +40,62 @@ function toggleCountdown() {
         startPauseBtn.textContent = "Continue";
         startPauseBtn.className = "pause";
     } else {
-        countdownTimer = setInterval(updateCountdown, 10);
+        startCountdown();
         startPauseBtn.textContent = "Pause";
-        startPauseBtn.className = "start";
+        startPauseBtn.className = "pause";
     }
 
     isCountingDown = !isCountingDown;
 }
 
-function updateCountdown() {
-    if (countdownTime <= 0) {
-        clearInterval(countdownTimer);
-        document.getElementById("startPauseBtn").classList.add("hidden");
-        document.querySelector(".display").classList.add("blinking");
-        document.getElementById("alarm-sound").play();
-        return;
-    }
+function startCountdown() {
+    const startPauseBtn = document.getElementById("startPauseBtn");
 
-    countdownTime -= 10;
-    updateDisplay();
+    countdownTimer = setInterval(() => {
+        if (remainingTime <= 0) {
+            clearInterval(countdownTimer);
+            triggerAlarm();
+            return;
+        }
+
+        remainingTime -= 10;
+        displayTime(remainingTime);
+    }, 10);
 }
 
-function clearCountdown() {
-    clearInterval(countdownTimer);
-    countdownTime = 0;
-    isCountingDown = false;
-    document.getElementById("input-section").classList.remove("hidden");
-    document.getElementById("countdown-controls").classList.add("hidden");
-    document.getElementById("startPauseBtn").textContent = "Start";
-    document.getElementById("startPauseBtn").className = "start";
-    document.querySelector(".display").classList.remove("blinking");
-    updateDisplay();
-}
-
-function updateDisplay() {
-    let totalSeconds = Math.floor(countdownTime / 1000);
-    let hours = Math.floor(totalSeconds / 3600);
-    let minutes = Math.floor((totalSeconds % 3600) / 60);
-    let seconds = totalSeconds % 60;
+function displayTime(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const hours = Math.floor(totalSeconds / 3600) % 100;
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
 
     document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
     document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
     document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+}
+
+function triggerAlarm() {
+    document.getElementById("startPauseBtn").classList.add("hidden");
+    document.querySelector(".display").classList.add("alarm");
+    playAlarmSound();
+}
+
+function playAlarmSound() {
+    const alarmSound = new Audio("alarm.mp3");
+    alarmSound.play();
+}
+
+function clearCountdown() {
+    inputArray = [0, 0, 0, 0, 0, 0];
+    updateDisplay();
+}
+
+function resetCountdown() {
+    clearInterval(countdownTimer);
+    remainingTime = initialTime;
+    displayTime(remainingTime);
+
+    document.getElementById("startPauseBtn").textContent = "Start";
+    document.getElementById("startPauseBtn").classList.remove("hidden");
+    document.querySelector(".display").classList.remove("alarm");
 }
