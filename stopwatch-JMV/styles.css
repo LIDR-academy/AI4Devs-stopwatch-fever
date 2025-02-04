@@ -52,3 +52,66 @@ body {
     background-color: red;
     clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
 }
+
+.stopwatch-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.display {
+    font-size: 50px;
+    font-weight: bold;
+    background-color: #d8e6ff;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid black;
+}
+
+.milliseconds {
+    font-size: 20px;
+    vertical-align: top;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.start {
+    background-color: green;
+    color: white;
+}
+
+.pause {
+    background-color: blue;
+    color: white;
+}
+
+.clear {
+    background-color: red;
+    color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: navy;
+    padding: 10px 0;
+}
+
+.back {
+    color: white;
+    background-color: navy;
+    font-size: 18px;
+}
+
