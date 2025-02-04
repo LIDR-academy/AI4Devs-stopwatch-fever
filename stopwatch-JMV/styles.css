@@ -110,3 +110,67 @@ footer {
     font-size: 18px;
 }
 
+.countdown-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.keypad {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.keypad button {
+    font-size: 20px;
+    padding: 15px;
+    margin: 5px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.set {
+    background-color: green;
+}
+
+.clear {
+    background-color: gray;
+}
+
+.start, .pause {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: navy;
+    padding: 10px 0;
+}
+
+.back {
+    color: white;
+    background-color: navy;
+    font-size: 18px;
+}
+
+.blinking {
+    animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+    from { background-color: red; }
+    to { background-color: rgba(255, 0, 0, 0.6); }
+}

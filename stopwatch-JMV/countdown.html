@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Atrás</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="countdown-container">
+    <div class="display">
+        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+        <span class="milliseconds">000</span>
+    </div>
+    <div id="input-section" class="input-section">
+        <div class="keypad">
+            <button onclick="addDigit(5)">5</button>
+            <button onclick="addDigit(6)">6</button>
+            <button onclick="addDigit(7)">7</button>
+            <button onclick="addDigit(8)">8</button>
+            <button onclick="addDigit(9)">9</button>
+            <button class="set" onclick="setCountdown()">Set</button>
+        </div>
+        <div class="keypad">
+            <button onclick="addDigit(0)">0</button>
+            <button onclick="addDigit(1)">1</button>
+            <button onclick="addDigit(2)">2</button>
+            <button onclick="addDigit(3)">3</button>
+            <button onclick="addDigit(4)">4</button>
+            <button class="clear" onclick="clearCountdown()">Clear</button>
+        </div>
+    </div>
+    <div id="countdown-controls" class="hidden">
+        <button id="startPauseBtn" class="start" onclick="toggleCountdown()">Start</button>
+        <button class="clear" onclick="clearCountdown()">Clear</button>
+    </div>
+</div>
+<footer>
+    <button class="back" onclick="location.href='index.html'">← Back</button>
+</footer>
+<audio id="alarm-sound" src="alarm.mp3"></audio>
+<script src="countdown.js"></script>
+</body>
+</html>
