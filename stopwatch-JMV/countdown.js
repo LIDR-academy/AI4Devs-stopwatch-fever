@@ -5,7 +5,8 @@ let remainingTime = 0;
 let inputArray = [0, 0, 0, 0, 0, 0]; // hh:mm:ss
 
 function addDigit(digit) {
-    // Desplazar valores a la izquierda y agregar el nuevo a la derecha
+    if (inputArray[0] !== 0) return; // No permitir más de 6 dígitos
+
     inputArray.shift();
     inputArray.push(digit);
     updateDisplay();
@@ -18,14 +19,16 @@ function updateDisplay() {
 }
 
 function setCountdown() {
-    initialTime =
-        parseInt(inputArray[0]) * 3600000 +
-        parseInt(inputArray[1]) * 360000 +
-        parseInt(inputArray[2]) * 60000 +
-        parseInt(inputArray[3]) * 10000 +
-        parseInt(inputArray[4]) * 1000 +
-        parseInt(inputArray[5]) * 100;
+    let hours = parseInt(`${inputArray[0]}${inputArray[1]}`, 10);
+    let minutes = parseInt(`${inputArray[2]}${inputArray[3]}`, 10);
+    let seconds = parseInt(`${inputArray[4]}${inputArray[5]}`, 10);
 
+    if (hours > 24 || minutes > 60 || seconds > 60) {
+        alert("Horas deben ser ≤ 24, minutos y segundos ≤ 60.");
+        return;
+    }
+
+    initialTime = (hours * 3600 + minutes * 60 + seconds) * 1000;
     remainingTime = initialTime;
 
     document.getElementById("input-buttons").classList.add("hidden");
@@ -38,19 +41,15 @@ function toggleCountdown() {
     if (isCountingDown) {
         clearInterval(countdownTimer);
         startPauseBtn.textContent = "Continue";
-        startPauseBtn.className = "pause";
     } else {
         startCountdown();
         startPauseBtn.textContent = "Pause";
-        startPauseBtn.className = "pause";
     }
 
     isCountingDown = !isCountingDown;
 }
 
 function startCountdown() {
-    const startPauseBtn = document.getElementById("startPauseBtn");
-
     countdownTimer = setInterval(() => {
         if (remainingTime <= 0) {
             clearInterval(countdownTimer);

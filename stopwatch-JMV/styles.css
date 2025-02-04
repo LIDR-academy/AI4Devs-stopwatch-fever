@@ -144,7 +144,7 @@ button {
     cursor: pointer;
 }
 
-.set {
+.num, .set, .start {
     background-color: green;
     color: white;
 }
@@ -169,8 +169,6 @@ button {
 }
 
 .alarm {
-    background-color: red !important;
-    color: white;
     animation: blink 0.5s infinite alternate;
 }
 

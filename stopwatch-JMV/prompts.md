@@ -74,3 +74,12 @@ Correcciones para cuenta atrás:
 4. 00:05:53
 ```
 
+```
+Correciones para la cuenta atrás:
+- Los número del teclado deben de ir del mismo color que el botón Start, verde
+- Si el estado del contador es 12:23:45 y un usuario selecciona otro número más, el estado no debe de variar
+- La validación del contador para que horas no sean más de 24, minutos no más de 60 y segundos no más de 60; debe de realizarse en el momento que se hace click en Set y estar el valor correcto antes de darle a Start
+- Cuando el contador llega a 0 el color rojo debe parpadear
+```
+
+
