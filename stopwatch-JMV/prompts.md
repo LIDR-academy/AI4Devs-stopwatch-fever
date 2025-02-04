@@ -1,7 +1,7 @@
-Primer prompt:
+# Primer prompt:
 
 ![img.png](img.png)
-
+```
 # Stopwatch
 ## Introducción
 Como un experto en diseño de interfaces de usuario y en código Javascript necesito que me crees una aplicación web que funcione como cronometro y como cuenta atrás a partir de una entrada definida por el usuario
@@ -12,11 +12,13 @@ Como un experto en diseño de interfaces de usuario y en código Javascript nece
 - El código tiene que estar dividido en diferentes funciones y seguir buenas prácticas
 
 Cuando tengas este primer paso realizado te daré más instrucciones
+```
 
-Segundo prompt:
+# Segundo prompt:
 
 ![img_1.png](img_1.png)
 
+```
 Ahora vamos con la pantalla de cronómetro
 
 # Cronómetro
@@ -32,4 +34,10 @@ Siguiendo con los archivos que ha me has generado necesito añadir la pantalla d
 - En el footer estará el botón back que te lleva a la pantalla principal
 - El diseño debe ser como la imagen adjuntada
 - El código tiene que estar dividido en diferentes funciones y seguir buenas prácticas
+```
 
+Fix segundo prompt:
+
+```
+Un cambio: necesito que el botón Pause sea del mismo color que Start
+```

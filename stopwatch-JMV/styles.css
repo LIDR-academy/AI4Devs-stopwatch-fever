@@ -85,13 +85,8 @@ button {
     margin: 5px;
 }
 
-.start {
+.start, .pause {
     background-color: green;
-    color: white;
-}
-
-.pause {
-    background-color: blue;
     color: white;
 }
 

@@ -10,12 +10,10 @@ function toggleStopwatch() {
         clearInterval(timer);
         elapsedTime += Date.now() - startTime;
         startPauseBtn.textContent = "Continue";
-        startPauseBtn.className = "pause";
     } else {
         startTime = Date.now();
         timer = setInterval(updateDisplay, 10);
         startPauseBtn.textContent = "Pause";
-        startPauseBtn.className = "pause";
     }
 
     isRunning = !isRunning;
