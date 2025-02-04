@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 600px;
+    border: 2px solid black;
+}
+
+.option {
+    flex: 1;
+    padding: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.stopwatch {
+    background-color: #eaffea;
+}
+
+.countdown {
+    background-color: #ffeaea;
+}
+
+.arrow {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border: 10px solid black;
+}
+
+.up {
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+    background-color: green;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.down {
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    background-color: red;
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
