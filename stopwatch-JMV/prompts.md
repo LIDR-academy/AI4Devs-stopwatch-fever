@@ -82,4 +82,10 @@ Correciones para la cuenta atrás:
 - Cuando el contador llega a 0 el color rojo debe parpadear
 ```
 
+```
+Correcciones:
+- En el contador las decimas de segundo deben de ir reduciendose también
+- Hay un error cuando el contador llega a 0 y se hace click en Clear, si vuelvo a darle a Start la cuenta atrás ya no vuelve a funcionar
+```
+
 

@@ -16,6 +16,7 @@ function updateDisplay() {
     document.getElementById("hours").textContent = `${inputArray[0]}${inputArray[1]}`;
     document.getElementById("minutes").textContent = `${inputArray[2]}${inputArray[3]}`;
     document.getElementById("seconds").textContent = `${inputArray[4]}${inputArray[5]}`;
+    document.getElementById("milliseconds").textContent = "000";
 }
 
 function setCountdown() {
@@ -33,6 +34,7 @@ function setCountdown() {
 
     document.getElementById("input-buttons").classList.add("hidden");
     document.getElementById("start-clear-buttons").classList.remove("hidden");
+    displayTime(remainingTime);
 }
 
 function toggleCountdown() {
@@ -41,12 +43,12 @@ function toggleCountdown() {
     if (isCountingDown) {
         clearInterval(countdownTimer);
         startPauseBtn.textContent = "Continue";
+        isCountingDown = false;
     } else {
         startCountdown();
         startPauseBtn.textContent = "Pause";
+        isCountingDown = true;
     }
-
-    isCountingDown = !isCountingDown;
 }
 
 function startCountdown() {
@@ -67,10 +69,12 @@ function displayTime(ms) {
     const hours = Math.floor(totalSeconds / 3600) % 100;
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
+    const milliseconds = ms % 1000;
 
     document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
     document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
     document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+    document.getElementById("milliseconds").textContent = milliseconds.toString().padStart(3, "0");
 }
 
 function triggerAlarm() {
@@ -85,8 +89,14 @@ function playAlarmSound() {
 }
 
 function clearCountdown() {
+    clearInterval(countdownTimer);
+    isCountingDown = false;
+
     inputArray = [0, 0, 0, 0, 0, 0];
     updateDisplay();
+
+    document.getElementById("input-buttons").classList.remove("hidden");
+    document.getElementById("start-clear-buttons").classList.add("hidden");
 }
 
 function resetCountdown() {
